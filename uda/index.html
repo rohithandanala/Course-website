@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            background-color:rgb(41, 31, 31); 
+            margin: 0%;
+            padding: 0%;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+       #heading p{
+           text-align: center;
+           padding: 10px;
+           font-family:'Courier New', Courier, monospace;
+           color: rgb(208, 215, 221);
+           font-size: 250%;
+           margin-top: 20px;
+           margin-bottom: 10px;
+       }
+       #heading{
+           margin-bottom: 10px;
+       }
+       
+       #menu{
+           background: none;
+           text-align: center;
+           color: rgb(208, 215, 221);
+       }
+       #menu button{
+           text-align: center;
+           font-size: 25px;
+           margin: 35px;
+           margin-top: 20px;
+           border: none;
+           background: none;
+           color: rgb(208, 215, 221);
+           font-family: 'Courier New', Courier, monospace;
+       }
+       #menu button:hover{
+            font-size: 30px;
+       }
+       
+      
+       #content{
+           background: none;
+           width: 80%;
+           margin: 10%;
+           margin-top: 0%;
+           margin-bottom: 0%;
+           height: 1000px;                                   /*height setted*/
+           text-align: center;
+       }
+       .content_box{                                        /*content*/
+           width: 100%;
+           height: 100%;
+           background: none;
+           display: none;
+       }
+
+       marquee{
+           background: none;
+           color: rgb(208, 215, 221);
+       }
+      
+       #subject_menu{
+           background: none;
+           color: rgba(250, 235, 215, 0.507);
+       }
+       
+       .subject_menu_button{
+           font-size: 20px;
+           background: none;
+           color: antiquewhite;
+           border: none;
+           margin: 7%;
+           margin-top: 10px;
+           margin-bottom: 10px;
+           font-family: 'Courier New', Courier, monospace;
+       }
+       .subject_menu_button:hover{
+           box-shadow: 0 0 10px rgba(250, 235, 215, 0.507);
+           font-size: 22px;
+       }
+       #subject_content_content{
+           
+           width: 100%;
+           height: 100%;
+           background: none;
+       }
+       .subject_content_name{
+           background: none;
+           text-align: left;
+           margin: 30px;
+           margin-bottom: 20px;
+           font-family: 'Courier New', Courier, monospace;
+           color: rgb(208, 215, 221);
+       }
+       .subject_imgs{
+           width: 200px;
+           height: 300px;
+           overflow: hidden;
+           border-radius: 2%;
+           box-shadow:  0 2px 10px;
+       }
+       #sem_01_subjects, #sem_03_subjects, #sem_04_subjects, #sem_07_subjects{
+           background: none;
+           display: none;
+       }
+      
+       .subject_select p{
+           background: none;
+           color: rgb(219, 226, 231);
+           
+           margin-top: 3px;
+       }
+       .subject_select{                             /*button type*/
+           border: none;
+           background: none;
+           margin: 10%;
+           margin-top: 5%;
+           font-size: 12px;
+           cursor: pointer;
+           width: 200px;
+           height: 400px;
+       }
+       .subject_select img:hover{
+           box-shadow:  0 0 6px 5px rgba(0, 0, 0, 0.596);
+       }
+       .subject_select:hover{
+           animation-name: font_increaser;
+           animation-duration: 20s;
+       }
+       @keyframes font_increaser{
+           0%{
+               font-size: 12px;
+           }
+           2%{
+               font-size: 18px;
+           }
+           
+           50%{
+               font-size: 18px;
+           }
+           
+           100%{
+               font-size: 18px;
+           }
+       }
+       
+       .subject_300, .subject_400, .subject_700{
+           float: left;
+           margin: 15%;
+           margin-top: 10px;
+           margin-bottom: 0%;
+           background: none;
+       }
+       #notification_box{
+           width: 80%;
+           height: 400px;
+           margin: 10%;
+           margin-top: 100px;
+           background: url("backg.jpg");
+           color: aliceblue;
+       }
+
+        #notification_box h3{
+           color: aquamarine;
+       }
+       iframe{
+        border-radius: 5px 5px 5px 5px;
+       }
+       .qs_menu_content{
+           color: aqua;
+           font-size: 20px;
+           background: none;
+           border: none;
+           margin: 7%;
+           margin-top: 10px;
+           margin-bottom: 10px;
+           font-family: 'Courier New', Courier, monospace;
+       }
+       .qs_menu_content:hover{
+            box-shadow: 0 0 10px rgba(250, 235, 215, 0.507);
+            font-size: 22px;
+       }
+       .qs_content{
+           color: aliceblue;
+           display: none;
+       }
+       .qs_content h2{
+           text-align: left;
+           margin-top: 20px;
+           margin-left: 10%;
+       }
+       .qs_button img{
+           width: 200px;
+           height: 300px;
+       }
+       #sem07_qs hr{
+           margin: 10px;
+       }
+       .qs_button{
+           color: aliceblue;
+           border: none;
+           font-size: 20px;
+           margin-right: 50px;
+           border-radius: 5px 5px 5px 5px;
+       }
+       .qs_button img:hover{
+           box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.596);
+       }
+       #news{
+           color: aliceblue;
+           text-align: left;
+           margin-left: 10%;
+       }
+       #books_content{
+        text-align: left;
+       }
+       #books_content h2{
+           color: antiquewhite;
+           text-align: center;
+       }
+       .book_button{
+           border: none;
+           color: aliceblue;
+           width: 200px;
+           margin-top: 50px;
+           margin-left: 20px;
+           color: beige;
+       }
+       .book_button img{
+           width: 200px;
+           height: 300px;
+       }
+       #others_content{
+           text-align: left;
+           color: rgb(167, 185, 180);
+           font-size: 20px;
+           margin-left: 12%;
+           margin-top: 30px;
+       }
+       #others_content li{
+           margin-top: 5px;
+       }
+       #others_content a{
+           background: none;
+       }
+    </style>
+</head>
+<body>
+    <div id="heading">
+       <p>METALLURGICAL ENGINEERING</p>                                      <!--heading section-->
+       <hr width="100%"/>
+    </div>
+    <div id="menu">
+        <button type="button" class="menu_button" id="home" onclick="menu('home')" value="home" >Home</button>|                                 <!--menu section-->   
+        <button type="button" class="menu_button" id="subjects" onclick="menu('subjects')" value="subjects" >Subjects</button>|
+        <button type="button" class="menu_button" id="prev.ques" onclick="menu('prev.ques')" value="prev.ques" >prev.ques</button>|
+        <button type="button" class="menu_button" id="books" onclick="menu('books')" value="books" >books</button>|
+        <button type="button" class="menu_button" id="others" onclick="menu('others')" value="others" >others</button>
+           
+    </div>
+    <div id="content">                                                         <!--content section-->
+        <div class="content_box" id="home_content">                            <!--home content-->
+            <marquee>Welcome to the Metallurgical Engineering portal.</marquee>
+            <div id="notification_box">
+                <h3 id="notification_box_heading">Notifications</h3>
+                <iframe src="notify.html" width="100%" height="100%"></iframe>
+            </div>
+            <h2 id="news">NEWS</h2>
+        </div>
+        <div class="content_box" id="subjects_content">                        <!--subjects content-->
+            <section id="subject_menu">
+                <button type="button" class="subject_menu_button" onclick="subject('sem_01')" id="sem_01" value="sem_01" >1st YEAR</button>|
+                <button type="button" class="subject_menu_button" onclick="subject('3rdsem')" id="3rdsem" value="3rdsem" >3rd SEM</button>|
+                <button type="button" class="subject_menu_button" onclick="subject('4thsem')" id="4thsem" value="4thsem" >4th SEM</button>|
+                <button type="button" class="subject_menu_button" onclick="subject('7thsem')" id="7thsem" value="7thsem" >7th SEM</button>
+            </section>
+            <div id="subject_content_content">
+                <div id="sem_01_subjects">                            <!--sem01 content-->
+                    <h2 class="subject_content_name">1st YEAR</h2>
+                    <button type="button" onclick="sub_links('106')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>106. ELEMENTS</p><p>OF</p><p> METALLURGICAL</p><p>ENGINEERING</p></button>     
+                </div>
+                <div id="sem_03_subjects">                            <!--sem03 subjects-->
+                    <h2 class="subject_content_name">3rd SEM</h2>
+                    <div id="subject_302" class="subject_300">
+                        <button type="button" onclick="sub_links('302')" class="subject_select" ><img src="backg.jpg" class="subject_imgs"/><p>302.<br/> ELEMENTRY<br/> PRINCILES<br/> OF METALLURGY</p></button>
+                    </div>
+                    <div id="subject_303" class="subject_300">
+                        <button type="button" onclick="sub_links('303')" class="subject_select"><img src="resoucers/303.jpg" class="subject_imgs"/><p>303.<br> METALLURGICAL THERMODYNAMICS</p></button>
+                    </div>
+                    <div id="subject_303" class="subject_300">
+                        <button type="button" onclick="sub_links('3032')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>303 (only <br/>35lessons)</p></button>
+                    </div>
+                    <div id="subject_304" class="subject_300">
+                        <button type="button" onclick="sub_links('304')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>304.<br/> PHYSICAL<br/> METALLURGY</p></button>
+                    </div>
+                    <div id="subject_305" class="subject_300">
+                        <button type="button" onclick="sub_links('305')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>305.<br/> IRON MAKING</p></button>
+                    </div>
+                </div>
+                <div id="sem_04_subjects">                            <!--sem04 subjects-->
+                    <h2 class="subject_content_name">4th SEM</h2>
+                    <div id="subject_401" class="subject_400">
+                            <button type="button" onclick="sub_links('401')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>4</p></button>
+                    </div>
+                    <div id="subject_402" class="subject_400">
+                            <button type="button" onclick="sub_links('402')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>402.<br/> HEAT TREATMENT<br/> TECHNOLOGY</p></button>
+                    </div>
+                    <div id="subject_403" class="subject_400">
+                            <button type="button" onclick="sub_links('403')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>403.<br/> STEEL <br/> MAKING</p></button>
+                    </div>
+                    <div id="subject_404" class="subject_400">
+                            <button type="button" onclick="sub_links('404')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>404.<br/> MATERIAL<br/> TESTING</p></button>
+                    </div>
+                    <div id="subject_405" class="subject_400">
+                            <button type="button" onclick="sub_links('405')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>405.<br/> FOUNDRY<br/> TECHNOLOGY</p></button>
+                    </div>
+                </div>
+                <div id="sem_07_subjects">                            <!--sem07 subjects-->
+                    <h2 class="subject_content_name">7th SEM</h2>
+                    <div id="subject_701" class="subject_700">
+                        <button type="button" onclick="sub_links('701')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>701.<br/> INDUSTRIAL<br/> MANAGEMENT</p><p> AND</p><p>ENTREPRENEURSHIP</p></button>
+                    </div>
+                    <div id="subject_702" class="subject_700">
+                        <button type="button" onclick="sub_links('702')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>702.<br/> MECHANICAL <br/>METALLURGY</p></button>
+                    </div>
+                    <div id="subject_703" class="subject_700">
+                        <button type="button" onclick="sub_links('703')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>703.<br/> NON-FEROUS</p><p>EXTRACTIVE</p><p>METALLURGY</p></button>
+                    </div>
+                    <div id="subject_704" class="subject_700">
+                        <button type="button" onclick="sub_links('704')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>704.</p><p> METAL CASTING </p><p>TECHNIQUES</p></button>
+                    </div>
+                    <div id="subject_705" class="subject_700">
+                        <button type="button" onclick="sub_links('705')" class="subject_select"><img src="backg.jpg" class="subject_imgs"/><p>705.<br/> WELDING<br/> TECHNOLOGY</p></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_box" id="prev.ques_content">                       <!--prev.ques content-->
+            <section id="subject_menu">
+                <button type="button" class="qs_menu_content" onclick="ques('sem_01')" id="sem_01" value="sem_01" >1st YEAR</button>|
+                <button type="button" class="qs_menu_content" onclick="ques('3rdsem')" id="3rdsem" value="3rdsem" >3rd SEM</button>|
+                <button type="button" class="qs_menu_content" onclick="ques('4thsem')" id="4thsem" value="4thsem" >4th SEM</button>|
+                <button type="button" class="qs_menu_content" onclick="ques('7thsem')" id="7thsem" value="7thsem" >7th SEM</button>
+            </section>
+            <div id="qs_content">                                       <!--qs content-->
+                <div id="sem01_qs" class="qs_content">                                      <!--sem01 qs-->
+                    sem01
+                </div>
+                <div id="sem03_qs" class="qs_content">                                      <!--sem03 qs-->
+                    sem03
+                </div>
+                <div id="sem04_qs" class="qs_content">                                      <!--sem04 qs-->
+                    sem04
+                </div>
+                <div id="sem07_qs" class="qs_content">                                      <!--sem07 qs-->
+                    <div data-aos="fade-up">
+                        <h2>7th sem</h2><h2>701</h2>
+                        <button type="button" class="qs_button" onclick="qs_links('701_c14')"><img src="resoucers/c14_701.jpg"\><br>c14</button>
+                    </div>
+                    <hr/>
+                    <h2>702</h2>
+                    <button type="button" class="qs_button" onclick="qs_links('702_c14')"><img src="/resoucers/c14_702.jpg"\><br>c14</button>
+                    <hr/>
+                    <h2>703</h2>
+                    <button type="button" class="qs_button" onclick="qs_links('703_c14')"><img src="resoucers/c14_703.jpg"\><br>c14</button>
+                    <hr/>
+                    <h2>704</h2>
+                    <button type="button" class="qs_button" onclick="qs_links('704_c14')"><img src="resoucers/c14_704.jpg"\><br>c14</button>
+                    <hr/>
+                    <h2>705</h2>
+                    <button type="button" class="qs_button" onclick="qs_links('705_c14')"><img src="resoucers/c14_705.jpg"\><br>c14</button>
+                    <hr/>
+                    <h2>706</h2>
+                    <button type="button" class="qs_button" onclick="qs_links('706_c14')"><img src="resoucers/c14_706.jpg"\><br>c14</button>
+                </div>
+            </div>        
+        </div>
+        <div class="content_box" id="others_content">                          <!--other content-->
+            <ul>
+            <li><p>sem04 model papers <a href="http://www.google.com">click here</a></p></li>
+            <li><p>Health safty guidlines for Metal Casting Technicques <a href="http://www.google.com">click here</a></p></li>
+            </ul>
+        </div>
+        <div class="content_box" id="books_content">                           <!--books content-->
+            <h2>BOOKS</h2>
+            <button type="button" class="book_button" id="mm_by_deiter"><img src="resoucers/mm_by_dieter.jpg" class="book_img"/><p>Mechanical Metallurgy by GORGE DIETER</p></button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+<script>
+    AOS.init();
+    function menu(x){                                                   
+        let home=document.getElementById('home_content');
+        let subjects=document.getElementById('subjects_content');
+        let ques=document.getElementById('prev.ques_content');
+        let others=document.getElementById('others_content');
+        let books=document.getElementById('books_content');
+        if(x=='home'){
+            home.style.display="block";
+            subjects.style.display="none";
+            ques.style.display="none";
+            others.style.display="none";
+            books.style.display="none";
+        }
+        else if(x=='subjects'){
+            home.style.display="none";
+            subjects.style.display="block";
+            ques.style.display="none";
+            others.style.display="none";
+            books.style.display="none";
+        }
+        else if(x=='prev.ques'){
+            home.style.display="none";
+            subjects.style.display="none";
+            ques.style.display="block";
+            others.style.display="none";
+            books.style.display="none";
+        }
+        else if(x=='others'){
+            home.style.display="none";
+            subjects.style.display="none";
+            ques.style.display="none";
+            others.style.display="block";
+            books.style.display="none";
+        }
+        else if(x=='books'){
+            home.style.display="none";
+            subjects.style.display="none";
+            ques.style.display="none";
+            others.style.display="none";
+            books.style.display="block";
+        }
+    }
+    function subject(x){
+        let sem_01= document.getElementById('sem_01_subjects');
+        let sem_03= document.getElementById('sem_03_subjects');
+        let sem_04=document.getElementById('sem_04_subjects');
+        let sem_07=document.getElementById('sem_07_subjects');
+        if(x=='sem_01'){
+            sem_01.style.display="block";
+            sem_03.style.display="none";
+            sem_04.style.display="none";
+            sem_07.style.display="none";
+        }
+        else if(x=='3rdsem'){
+            sem_01.style.display="none";
+            sem_03.style.display="block";
+            sem_04.style.display="none";
+            sem_07.style.display="none";
+        }
+        else if(x=='4thsem'){
+            sem_01.style.display="none";
+            sem_03.style.display="none";
+            sem_04.style.display="block";
+            sem_07.style.display="none";
+        }
+        else if(x=='7thsem'){
+            sem_01.style.display="none";
+            sem_03.style.display="none";
+            sem_04.style.display="none";
+            sem_07.style.display="block";
+        }
+    }
+    function sub_links(x){
+        if(x=="106"){
+            window.location="https://drive.google.com/file/d/1CvjFsGHXtbxsJ4f23Vt20ZoTmjhhakBA/view?usp=drivesdk";
+        }
+        else if(x=="302"){
+            window.location="https://drive.google.com/file/d/1es3CvbuLGoBostRr31QSQ0okOmET3EZQ/view?usp=drivesdk";
+        }
+        else if(x=="303"){
+            window.location="https://drive.google.com/open?id=100ktHDQxcam5aHDRgQz4ff_wLIVwLXh8";
+        }
+        else if(x=="3032"){
+            window.location="https://drive.google.com/open?id=1ewxRLGYSRKdJIPg9tMwJh1P3sdlob8_1";
+        }
+        else if(x=="304"){
+            window.location="https://drive.google.com/open?id=1PmsUPlzZToC_nnwzPvZVqUzRHzUXrtIh";
+        }
+        else if(x=="305"){
+            window.location="https://drive.google.com/open?id=1lqvxENSTU7xbIz-FQ3fZ6ZSPapcmx_-P";
+        }
+        else if(x=="401"){
+            window.location="";
+        }
+        else if(x=="402"){
+            window.location="https://drive.google.com/open?id=1jc7qvYxURTUuMs4pE0CsSeFwJ7ClDD5u";
+        }
+        else if(x=="403"){
+            window.location="https://drive.google.com/open?id=1DMPfmZuIOt9ZpZ35buRMf1h4eEH5-iKz";
+        }
+        else if(x=="404"){
+            window.location="https://drive.google.com/open?id=1DQ5wX0XQbW6wqGGtHHJZVYdEou0_AoLl";
+        }
+        else if(x=="405"){
+            window.location="https://drive.google.com/open?id=1XDtzPWum_Xy0ihezQ-M35aJOPa27bSBd";
+        }
+        else if(x=="701"){
+            window.location="https://drive.google.com/open?id=1UQQAIVWUEfE18FWJPMEbKNFhpbBP96Js";
+        }
+        else if(x=="702"){
+            window.location="https://drive.google.com/open?id=1QUxX4ovdnDD4SKlbipQOvLy387Mwm_Fw";
+        }
+        else if(x=="703"){
+            window.location="https://drive.google.com/open?id=17k5tgfOIb8Hoo7ZdsldCZ5qlTrRMZyOx";
+        }
+        else if(x=="704"){
+            window.location="https://drive.google.com/open?id=1-PvRNof0HbWI6xOjMyBgRUL2FYaVAdYQ";
+        }
+        else if(x=="705"){
+            window.location="https://drive.google.com/open?id=1RTqrIUn8373BZOw57PMEVkD8j6PAleNv";
+        }
+    }
+    function ques(x){
+        let sem01_qs=document.getElementById('sem01_qs');
+        let sem03_qs=document.getElementById('sem03_qs');
+        let sem04_qs=document.getElementById('sem04_qs');
+        let sem07_qs=document.getElementById('sem07_qs');
+        if(x=="sem_01"){
+            sem01_qs.style.display="block";
+            sem03_qs.style.display="none";
+            sem04_qs.style.display="none";
+            sem07_qs.style.display="none";
+        }
+        if(x=="3rdsem"){
+            sem01_qs.style.display="none";
+            sem03_qs.style.display="block";
+            sem04_qs.style.display="none";
+            sem07_qs.style.display="none";
+        }
+        if(x=="4thsem"){
+            sem01_qs.style.display="none";
+            sem03_qs.style.display="none";
+            sem04_qs.style.display="block";
+            sem07_qs.style.display="none";
+        }
+        if(x=="7thsem"){
+            sem01_qs.style.display="none";
+            sem03_qs.style.display="none";
+            sem04_qs.style.display="none";
+            sem07_qs.style.display="block";
+        }
+    }
+    function qs_links(x){
+        if(x=="701_c14"){
+            window.location="https://drive.google.com/open?id=1OAA2_J0_dlPNO0hLiw8G1S7wcbqI0FyK";
+        }
+        else if(x=="702_c14"){
+            window.location="https://drive.google.com/open?id=1w-DkYh-60LhS-LMErkYgXN9v5vzA_G8I";
+        }
+        else if(x=="703_c14"){
+            window.location="https://drive.google.com/open?id=15UkzudpZAYRvzrjQ27etifgCF-Ai_Igi";
+        }
+        else if(x=="704_c14"){
+            window.location="https://drive.google.com/open?id=1-O-_1E_g03LfxnEyckXDl5eiKJjwsWlY";
+        }
+        else if(x=="705_c14"){
+            window.location="https://drive.google.com/open?id=1Y0kdlgk_wu7FdHVJAd13VznrgwG74AOG";
+        }
+        else if(x=="706_c14"){
+            window.location="https://drive.google.com/open?id=1ZenNrSXktvORUbsy33ZlKKqoUc5JGarE";
+        }
+    }
+</script>
+</html>
